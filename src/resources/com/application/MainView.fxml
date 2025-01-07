@@ -20,4 +20,5 @@
     <PasswordField fx:id="passwordField" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
 
     <Button text="Login" onAction="#handleLogin" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+    <Button text="Register" onAction="#handleRegister" GridPane.columnIndex="1" GridPane.rowIndex="3"/>
 </GridPane>

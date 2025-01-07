@@ -6,6 +6,6 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<VBox xmlns:fx="http://javafx.com/fxml" fx:controller="com.application.RecruiterController">
+<VBox xmlns:fx="http://javafx.com/fxml" fx:controller="com.application.EmployerController">
     <Label text="Welcome, Recruiter"/>
 </VBox>

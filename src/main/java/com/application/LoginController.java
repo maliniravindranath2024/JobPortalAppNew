@@ -49,7 +49,7 @@ String role = authenticateUser(username, password);
             }
 
     private String authenticateUser(String username, String password) throws SQLException {
-        String query = "SELECT role FROM users WHERE EmailAddress = ? AND Password = ?";
+        String query = "SELECT role FROM users WHERE email = ? AND password = ?";
 
         try {
             Connection connection = DBUtil.getConnection();
@@ -80,7 +80,7 @@ private void loadViewForRole(String role) throws IOException {
         case "recruiter":
             fxmlFile = "RecruiterView.fxml";
             break;
-        case "jobseeker":
+        case "job_seeker":
             fxmlFile = "JobSeekerView.fxml";
             break;
         default:
@@ -98,6 +98,25 @@ private void loadViewForRole(String role) throws IOException {
     stage.setTitle(role + " Dashboard");
     stage.show();
 }
+
+    @FXML
+    private void handleRegister() {
+        try {
+            // Load the registration view (RegisterView.fxml)
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("RegisterView.fxml"));
+            Scene registerScene = new Scene(fxmlLoader.load());
+
+            // Use the existing stage to display the registration view
+            Stage stage = (Stage) usernameField.getScene().getWindow();
+            stage.setScene(registerScene);
+            stage.setTitle("Register");
+            stage.show();
+        }
+        catch (IOException e) {
+            showAlert(Alert.AlertType.ERROR, "Loading Error", "Unable to load the registration view.");
+            e.printStackTrace();
+        }
+    }
 
     private void showAlert(Alert.AlertType alertType, String title, String message) {
         Alert alert = new Alert(alertType);
