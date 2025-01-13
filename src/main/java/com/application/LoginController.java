@@ -1,6 +1,7 @@
 package com.application;
 
 import com.application.DBUtil;
+import com.application.UserSession;
 
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -34,11 +35,17 @@ public class LoginController {
             showAlert(Alert.AlertType.WARNING, "Input Error", "Please enter both username and password.");
             return;
         }
-String role = authenticateUser(username, password);
-        if (role == null) {
+    // String role = authenticateUser(username, password);
+        ResultSet userDetails = authenticateUser(username, password);
+        if (userDetails == null) {
             showAlert(Alert.AlertType.ERROR, "Login Failed", "Invalid username or password.");
         } else {
             try {
+                int userId = userDetails.getInt("user_id");
+                String role = userDetails.getString("role");
+
+                UserSession.getInstance().setUserId(userId);
+                UserSession.getInstance().setRole(role);
                 loadViewForRole(role);
             }
             catch (IOException e) {
@@ -48,8 +55,8 @@ String role = authenticateUser(username, password);
         }
             }
 
-    private String authenticateUser(String username, String password) throws SQLException {
-        String query = "SELECT role FROM users WHERE email = ? AND password = ?";
+    private ResultSet authenticateUser(String username, String password) throws SQLException {
+        String query = "SELECT user_id, role FROM users WHERE email = ? AND password = ?";
 
         try {
             Connection connection = DBUtil.getConnection();
@@ -59,7 +66,7 @@ String role = authenticateUser(username, password);
             ResultSet resultSet = preparedStatement.executeQuery();
             if (resultSet.next()) {
                 // Return the user's role
-                return resultSet.getString("role");
+                return resultSet;
             }
         }
         catch (SQLException e) {
@@ -78,10 +85,10 @@ private void loadViewForRole(String role) throws IOException {
             fxmlFile = "AdminView.fxml";
             break;
         case "recruiter":
-            fxmlFile = "RecruiterView.fxml";
+            fxmlFile = "EmployerDashboardView.fxml";
             break;
         case "job_seeker":
-            fxmlFile = "JobSeekerView.fxml";
+            fxmlFile = "JobSeekerDashboardView.fxml";
             break;
         default:
             showAlert(Alert.AlertType.ERROR, "Role Error", "Unknown role: " + role);
@@ -95,6 +102,9 @@ private void loadViewForRole(String role) throws IOException {
     // Use the existing stage to display the new scene
     Stage stage = (Stage) usernameField.getScene().getWindow();
     stage.setScene(scene);
+    stage.sizeToScene();
+    stage.setMinWidth(1000);
+    stage.setMinHeight(800);
     stage.setTitle(role + " Dashboard");
     stage.show();
 }
@@ -109,6 +119,9 @@ private void loadViewForRole(String role) throws IOException {
             // Use the existing stage to display the registration view
             Stage stage = (Stage) usernameField.getScene().getWindow();
             stage.setScene(registerScene);
+            stage.sizeToScene();
+            stage.setMinWidth(1000);
+            stage.setMinHeight(800);
             stage.setTitle("Register");
             stage.show();
         }

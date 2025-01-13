@@ -111,10 +111,10 @@ public class RegisterController {
 
             // Pass the user ID to the next controller
             if (fxmlFile.equals("JobseekerProfileView.fxml")) {
-                JobSeekerController controller = loader.getController();
+                JobSeekerRegisterController controller = loader.getController();
                 controller.initializeData(userId); // Pass user ID
             } else if (fxmlFile.equals("EmployerProfileView.fxml")) {
-                EmployerController controller = loader.getController();
+                EmployerRegisterController controller = loader.getController();
                 controller.initializeData(userId); // Pass user ID
             }
 

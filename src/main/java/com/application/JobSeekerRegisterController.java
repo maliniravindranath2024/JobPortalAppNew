@@ -1,6 +1,9 @@
 package com.application;
 
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
@@ -8,8 +11,6 @@ import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 
 import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.StandardCopyOption;
@@ -17,7 +18,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
-public class JobSeekerController {
+public class JobSeekerRegisterController {
     private int userId; // Store the passed user ID
     private File selectedResumeFile; // Stores the uploaded file
     // FXML Fields
@@ -109,6 +110,7 @@ public class JobSeekerController {
             int rowsInserted = statement.executeUpdate();
             if (rowsInserted > 0) {
                 showAlert(Alert.AlertType.INFORMATION, "Success", "Profile saved successfully!");
+                handleNavigateToJobSeekerView();
             }
 
         } catch (SQLException e) {
@@ -116,7 +118,23 @@ public class JobSeekerController {
             showAlert(Alert.AlertType.ERROR, "Database Error", "Failed to save profile.");
         }
     }
+    private void handleNavigateToJobSeekerView() {
+        try {
+            // Load JobSeekerDashboardView.fxml
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("JobSeekerDashboardView.fxml"));
+            Parent root = loader.load();
 
+            // Get the current stage (window) and set the new scene
+            Stage stage = (Stage) firstNameField.getScene().getWindow(); // Use any node from the current scene
+            stage.setScene(new Scene(root)); // Set the new scene
+            stage.setTitle("Job Seeker Dashboard"); // Update the window title
+            stage.show();
+
+        } catch (IOException e) {
+            e.printStackTrace();
+            showAlert(Alert.AlertType.ERROR, "Navigation Error", "Unable to load JobSeekerView.");
+        }
+    }
     // Cancel button logic
     @FXML
     public void handleCancel() {

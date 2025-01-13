@@ -6,7 +6,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane xmlns:fx="http://javafx.com/fxml" fx:controller="com.application.EmployerController">
+<AnchorPane xmlns:fx="http://javafx.com/fxml" fx:controller="com.application.EmployerRegisterController">
     <children>
         <!-- Title -->
         <Label text="Register Company" layoutX="150" layoutY="20" style="-fx-font-size: 18px;"/>

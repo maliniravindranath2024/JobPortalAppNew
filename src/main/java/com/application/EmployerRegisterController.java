@@ -1,15 +1,20 @@
 package com.application;
 
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
 
+import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
-public class EmployerController {
+public class EmployerRegisterController {
 
     private int userId; // Store the passed user ID
 
@@ -63,11 +68,35 @@ public class EmployerController {
             int rowsInserted = preparedStatement.executeUpdate();
             if (rowsInserted > 0) {
                 showAlert(Alert.AlertType.INFORMATION, "Success", "Company details saved successfully!");
+                handleNavigateToEmployerView();
             }
 
         } catch (SQLException e) {
             e.printStackTrace();
             showAlert(Alert.AlertType.ERROR, "Database Error", "An error occurred while saving company details.");
+        }
+    }
+
+    private void handleNavigateToEmployerView() {
+        try {
+            // Load EmployerDashboardView.fxml
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("EmployerDashboardView.fxml"));
+            Parent root = loader.load();
+
+            // Pass data to EmployerViewController if needed
+            EmployerViewController controller = loader.getController();
+            // Example: Passing employer data (optional)
+            // controller.initializeEmployerDetails(companyName, employerId);
+
+            // Get the current stage and set new scene
+            Stage stage = (Stage) companyNameField.getScene().getWindow(); // Access current stage
+            stage.setScene(new Scene(root)); // Set EmployerDashboardView.fxml scene
+            stage.setTitle("Employer Dashboard"); // Set a new title for the view
+            stage.show();
+
+        } catch (IOException e) {
+            e.printStackTrace();
+            showAlert(Alert.AlertType.ERROR, "Navigation Error", "Unable to load EmployerView.");
         }
     }
 
