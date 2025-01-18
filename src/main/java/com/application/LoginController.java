@@ -27,7 +27,8 @@ public class LoginController {
     private PasswordField passwordField;
 
     @FXML
-    private void handleLogin() throws SQLException {
+    private void handleLogin() throws SQLException
+    {
         String username = usernameField.getText();
         String password = passwordField.getText();
 
@@ -39,7 +40,8 @@ public class LoginController {
         ResultSet userDetails = authenticateUser(username, password);
         if (userDetails == null) {
             showAlert(Alert.AlertType.ERROR, "Login Failed", "Invalid username or password.");
-        } else {
+        }
+        else {
             try {
                 int userId = userDetails.getInt("user_id");
                 String role = userDetails.getString("role");
@@ -53,7 +55,7 @@ public class LoginController {
                 e.printStackTrace();
             }
         }
-            }
+    }
 
     private ResultSet authenticateUser(String username, String password) throws SQLException {
         String query = "SELECT user_id, role FROM users WHERE email = ? AND password = ?";

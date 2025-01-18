@@ -107,4 +107,9 @@ public class Job {
     public void setExpiryDate(String expiryDate) {
         this.expiryDate = expiryDate;
     }
+
+    @Override
+    public String toString() {
+        return jobId + " - " + title;
+    }
 }

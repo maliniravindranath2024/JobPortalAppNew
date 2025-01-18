@@ -134,7 +134,6 @@ public void navigateToDashboard() {
         clearForm();
         Stage currentStage = (Stage) titleField.getScene().getWindow();
         currentStage.close();
-
     }
 
     private boolean isEmployerIdValid(int employerId)
@@ -156,7 +155,6 @@ public void navigateToDashboard() {
             return false;
         }
     }
-
 
     /**
      * Clear all input fields.

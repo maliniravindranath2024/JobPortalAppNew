@@ -8,19 +8,19 @@ public class Jobseeker {
         private String phone;
         private String resume;
         private String skills;
-        private int experienceYears;
+        private int experience;
         private String education;
 
         public Jobseeker() {}
 
-        public Jobseeker(int jobSeekerId, String firstName, String lastName, String phone, String resume, String skills, int experienceYears, String education) {
+        public Jobseeker(int jobSeekerId, String firstName, String lastName, String phone, String resume, String skills, int experience, String education) {
             this.jobSeekerId = jobSeekerId;
             this.firstName = firstName;
             this.lastName = lastName;
             this.phone = phone;
             this.resume = resume;
             this.skills = skills;
-            this.experienceYears = experienceYears;
+            this.experience = experience;
             this.education = education;
         }
 
@@ -32,19 +32,19 @@ public class Jobseeker {
             this.jobSeekerId = jobSeekerId;
         }
 
-        public String getFirstName() {
+        public String getFirstname() {
             return firstName;
         }
 
-        public void setFirstName(String firstName) {
+        public void setFirstname(String firstName) {
             this.firstName = firstName;
         }
 
-        public String getLastName() {
+        public String getLastname() {
             return lastName;
         }
 
-        public void setLastName(String lastName) {
+        public void setLastname(String lastName) {
             this.lastName = lastName;
         }
 
@@ -72,12 +72,12 @@ public class Jobseeker {
             this.skills = skills;
         }
 
-        public int getExperienceYears() {
-            return experienceYears;
+        public int getExperience() {
+            return experience;
         }
 
-        public void setExperienceYears(int experienceYears) {
-            this.experienceYears = experienceYears;
+        public void setExperience(int experience) {
+            this.experience = experience;
         }
 
         public String getEducation() {

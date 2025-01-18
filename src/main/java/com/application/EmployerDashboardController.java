@@ -47,24 +47,24 @@ import java.io.IOException;
          * Load the "Delete a Job Posting" view.
          */
         @FXML
-        public void handleDeleteJob() {
-            loadView("DeleteJobView.fxml");
+        public void handleEditJob() {
+            loadView("EditJobView.fxml");
         }
 
         /**
          * Load the "View Candidate Profile" view.
          */
         @FXML
-        public void handleViewCandidateProfile() {
-            loadView("CandidateProfileView.fxml");
+        public void handleInterview() {
+            loadView("ScheduleInterviewView.fxml");
         }
 
         /**
          * Load the "Accept or Reject Candidate" view.
          */
         @FXML
-        public void handleAcceptRejectCandidate() {
-            loadView("AcceptRejectCandidateView.fxml");
+        public void handleUpdateCandidateStatus() {
+            loadView("UpdateCandidateStatusView.fxml");
         }
 
         /**

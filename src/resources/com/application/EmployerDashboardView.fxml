@@ -18,9 +18,9 @@
             <Button text="Add New Job" prefWidth="150" onAction="#handleAddNewJob" />
             <Button text="View Candidates" prefWidth="150" onAction="#handleViewCandidates" />
             <Button text="View All Jobs Posted" prefWidth="150" onAction="#handleViewAllJobs" />
-            <Button text="Delete Job Posting" prefWidth="150" onAction="#handleDeleteJob" />
-            <Button text="View Candidate Profile" prefWidth="150" onAction="#handleViewCandidateProfile" />
-            <Button text="Accept/Reject Candidate" prefWidth="150" onAction="#handleAcceptRejectCandidate" />
+            <Button text="Edit Job Posting" prefWidth="150" onAction="#handleEditJob" />
+            <Button text="Schedule Interview" prefWidth="150" onAction="#handleInterview" />
+            <Button text="Update Candidate Status" prefWidth="150" onAction="#handleUpdateCandidateStatus" />
             <Button text="Update Company Profile" prefWidth="150" onAction="#handleUpdateProfile" />
             <Button text="Logout" prefWidth="150" onAction="#handleLogout" />
         </VBox>
