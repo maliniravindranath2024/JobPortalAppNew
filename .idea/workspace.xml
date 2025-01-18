@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="f353f0d2-cbcf-4d6d-b0fd-3af7c3daab54" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/application/AddJobController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/application/ApplicationStatusController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/application/ApplyForJobsController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/application/DBConnectionTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/application/EditUpdateProfileController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/application/EmployerDashboardController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/application/EmployerRegisterController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/application/EmployerViewController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/application/FeedbackController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/application/GiveFeedbackController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/application/JobController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/application/JobSeekerRegisterController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/application/JobSeekerViewController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/application/SearchForJobsController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/application/UserSession.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/application/ViewJobStatusController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/application/ViewJobsController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/resources/com/application/AddJob.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/resources/com/application/ApplyForJobs.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/resources/com/application/EditUpdateProfile.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/resources/com/application/EmployerDashboardView.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/resources/com/application/GiveFeedback.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/resources/com/application/Job.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/resources/com/application/JobSeekerDashboardView.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/resources/com/application/SearchForJobs.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/resources/com/application/UpdateCompanyProfileView.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/resources/com/application/ViewAllJobsForEmployer.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/resources/com/application/ViewCandidatesView.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/resources/com/application/ViewJobStatus.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/resources/com/application/ViewJobs.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/lib.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/lib.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/application/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/application/Application.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/application/DBUtil.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/application/Employer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/application/Employer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/application/EmployerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/application/EmployerController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/application/Job.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/application/Job.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/application/JobSeekerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/application/JobSeekerController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/application/Jobseeker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/application/Jobseeker.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/application/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/application/LoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/application/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/application/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/application/RegisterController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/application/RegisterController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resources/com/application/JobSeekerView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/com/application/JobSeekerView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resources/com/application/JobseekerProfileView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/com/application/JobseekerProfileView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resources/com/application/MainView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/com/application/MainView.fxml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="FxmlFile" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="malinis-branch" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;DatagirlX&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/maliniravindranath2024/JobPortalAppNew.git&quot;,
+    &quot;accountId&quot;: &quot;141ab487-c960-4ce7-a72e-72707466de9f&quot;
+  }
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 7
+}</component>
+  <component name="ProjectId" id="2rLBwoMHIaPI2ICFNLlgxVUWKvO" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.DBConnectionTest.executor": "Run",
+    "Application.Main.executor": "Run",
+    "Application.Unnamed.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "abasiofons-branch",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/Abasiofon Ime Moses/Downloads/mysql-connector-java-8.0.29/mysql-connector-java-8.0.29/mysql-connector-java-8.0.29.jar",
+    "project.structure.last.edited": "Libraries",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "reference.projectsettings.compiler.javacompiler"
+  }
+}]]></component>
+  <component name="RunManager" selected="Application.Main">
+    <configuration name="DBConnectionTest" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="com.application.DBConnectionTest" />
+      <module name="JobPortalAppNew" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Main" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="com.application.Main" />
+      <module name="JobPortalAppNew" />
+      <option name="VM_PARAMETERS" value="--module-path &quot;C:\Users\Abasiofon Ime Moses\Downloads\openjfx-23.0.1_windows-x64_bin-sdk\javafx-sdk-23.0.1\lib&quot; --add-modules javafx.controls,javafx.fxml" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Application.Main" />
+      <item itemvalue="Application.DBConnectionTest" />
+    </list>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="f353f0d2-cbcf-4d6d-b0fd-3af7c3daab54" name="Changes" comment="" />
+      <created>1736328717288</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1736328717288</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>

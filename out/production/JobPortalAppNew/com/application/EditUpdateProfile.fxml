@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns:fx="http://javafx.com/fxml" fx:controller="com.application.EditUpdateProfileController" spacing="10" alignment="CENTER" style="-fx-padding: 20;">
+    <Label text="Edit Profile" style="-fx-font-size: 20px; -fx-font-weight: bold;" />
+    <TextField fx:id="firstNameField" promptText="First Name" />
+    <TextField fx:id="lastNameField" promptText="Last Name" />
+    <TextField fx:id="phoneField" promptText="Phone" />
+    <TextField fx:id="skillsField" promptText="Skills" />
+    <TextField fx:id="experienceField" promptText="Experience (Years)" />
+    <TextField fx:id="educationField" promptText="Education" />
+    <Label fx:id="resumeLabel" text="No file selected" />
+    <Button text="Upload Resume" onAction="#handleUploadResume" />
+    <Button text="Save" onAction="#handleSave" />
+</VBox>

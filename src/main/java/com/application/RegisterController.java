@@ -1,5 +1,6 @@
 package com.application;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -19,7 +20,6 @@ public class RegisterController {
     // FXML fields corresponding to RegisterView.fxml
     @FXML private TextField emailField;
     @FXML private PasswordField passwordField;
-    @FXML private TextField roleField;
     @FXML private ToggleGroup roleToggleGroup;
 
     @FXML
@@ -33,6 +33,51 @@ public class RegisterController {
         jobseekerRadioButton.setSelected(true); // Jobseeker is selected by default
     }
 
+    // Method to handle login
+    @FXML
+    public void handleLogin(ActionEvent event) {
+        String email = emailField.getText();
+        String password = passwordField.getText();
+
+        // Input validation
+        if (email.isEmpty() || password.isEmpty()) {
+            showAlert(Alert.AlertType.WARNING, "Input Error", "Please fill in all required fields.");
+            return;
+        }
+
+        // Check credentials in the database
+        String query = "SELECT user_id, role FROM users WHERE email = ? AND password = ?";
+
+        try (Connection connection = DBConnectionTest.getConnection();
+             PreparedStatement statement = connection.prepareStatement(query)) {
+
+            statement.setString(1, email);
+            statement.setString(2, password);
+
+            try (ResultSet resultSet = statement.executeQuery()) {
+                if (resultSet.next()) {
+                    // Login successful, redirect to the appropriate profile page
+                    String role = resultSet.getString("role");
+                    int userId = resultSet.getInt("user_id");
+
+                    UserSession.getInstance().setUserId(userId);
+                    UserSession.getInstance().setRole(role);
+
+                    if (role.equalsIgnoreCase("jobseeker")) {
+                        openPage("JobseekerProfileView.fxml", userId);
+                    } else if (role.equalsIgnoreCase("employer")) {
+                        openPage("EmployerProfileView.fxml", userId);
+                    }
+                } else {
+                    showAlert(Alert.AlertType.ERROR, "Login Error", "Invalid email or password.");
+                }
+            }
+
+        } catch (SQLException e) {
+            showAlert(Alert.AlertType.ERROR, "Database Error", "Error occurred while checking user credentials: " + e.getMessage());
+            e.printStackTrace();
+        }
+    }
 
     // Method to handle registration
     @FXML
@@ -63,7 +108,7 @@ public class RegisterController {
 
         String lastInsertIdQuery = "SELECT LAST_INSERT_ID()";
 
-        try (Connection connection = DBUtil.getConnection(); // Assuming a DBUtil class for DB connection
+        try (Connection connection = DBConnectionTest.getConnection(); // Assuming a DBUtil class for DB connection
              PreparedStatement insertStatement = connection.prepareStatement(query);
              PreparedStatement lastIdStatement = connection.prepareStatement(lastInsertIdQuery)){
 
@@ -93,29 +138,29 @@ public class RegisterController {
             // Redirect to the appropriate profile creation page based on role
             if (role.equalsIgnoreCase("job_seeker")) {
                 openPage("JobseekerProfileView.fxml", lastInsertedId);
-            } else if (role.equalsIgnoreCase("Recruiter")) {
+            } else if (role.equalsIgnoreCase("recruiter")) {
                 openPage("EmployerProfileView.fxml", lastInsertedId);
             }
 
         } catch (SQLException e) {
-            showAlert(Alert.AlertType.ERROR, "Database Error", "Error occurred while saving user details.");
+            showAlert(Alert.AlertType.ERROR, "Database Error", "Error occurred while saving user details: " + e.getMessage());
             e.printStackTrace();
         }
     }
 
-    private void openPage(String fxmlFile, int userId) {
+    private void openPage(String fxmlFile, int user_id) {
         try {
             // Load the FXML file
-            FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlFile));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/application/" + fxmlFile));
             Parent root = loader.load();
 
             // Pass the user ID to the next controller
             if (fxmlFile.equals("JobseekerProfileView.fxml")) {
                 JobSeekerController controller = loader.getController();
-                controller.initializeData(userId); // Pass user ID
+                controller.initializeData(user_id); // Pass user ID
             } else if (fxmlFile.equals("EmployerProfileView.fxml")) {
                 EmployerController controller = loader.getController();
-                controller.initializeData(userId); // Pass user ID
+                controller.initializeData(user_id); // Pass user ID
             }
 
             // Open the new page in the current stage
@@ -131,8 +176,13 @@ public class RegisterController {
 
     @FXML
     public void handleCancel() {
-        // Optionally return to the previous screen or close the application
-        System.exit(0);
+        // Ask for confirmation before closing
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION, "Are you sure you want to exit?", ButtonType.YES, ButtonType.NO);
+        alert.showAndWait().ifPresent(response -> {
+            if (response == ButtonType.YES) {
+                System.exit(0);
+            }
+        });
     }
 
     // Utility method to display alerts

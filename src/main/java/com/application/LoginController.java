@@ -1,6 +1,7 @@
 package com.application;
 
-import com.application.DBUtil;
+import com.application.DBConnectionTest;
+import com.application.UserSession;
 
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -34,11 +35,19 @@ public class LoginController {
             showAlert(Alert.AlertType.WARNING, "Input Error", "Please enter both username and password.");
             return;
         }
-String role = authenticateUser(username, password);
-        if (role == null) {
+        // String role = authenticateUser(username, password);
+        ResultSet userDetails = authenticateUser(username, password);
+        if (userDetails == null) {
             showAlert(Alert.AlertType.ERROR, "Login Failed", "Invalid username or password.");
         } else {
             try {
+                int userId = userDetails.getInt("user_id");
+                String role = userDetails.getString("role");
+
+                System.out.println("Set id: " + userId); // Debugging print statement
+
+                UserSession.getInstance().setUserId(userId);
+                UserSession.getInstance().setRole(role);
                 loadViewForRole(role);
             }
             catch (IOException e) {
@@ -46,58 +55,61 @@ String role = authenticateUser(username, password);
                 e.printStackTrace();
             }
         }
-            }
+    }
 
-    private String authenticateUser(String username, String password) throws SQLException {
-        String query = "SELECT role FROM users WHERE email = ? AND password = ?";
+    private ResultSet authenticateUser(String username, String password) throws SQLException {
+        String query = "SELECT user_id, role FROM users WHERE email = ? AND password = ?";
 
         try {
-            Connection connection = DBUtil.getConnection();
-             PreparedStatement preparedStatement = connection.prepareStatement(query);
+            Connection connection = DBConnectionTest.getConnection();
+            PreparedStatement preparedStatement = connection.prepareStatement(query);
             preparedStatement.setString(1, username);
             preparedStatement.setString(2, password);
             ResultSet resultSet = preparedStatement.executeQuery();
             if (resultSet.next()) {
                 // Return the user's role
-                return resultSet.getString("role");
+                return resultSet;
             }
         }
         catch (SQLException e) {
-        showAlert(Alert.AlertType.ERROR, "Database Error", "Cannot connect to the database. Please try again later.");
-        e.printStackTrace();
-    }
+            showAlert(Alert.AlertType.ERROR, "Database Error", "Cannot connect to the database. Please try again later.");
+            e.printStackTrace();
+        }
         // Return null if authentication fails
         return null;
-}
-private void loadViewForRole(String role) throws IOException {
-    String fxmlFile;
-
-    // Select the appropriate FXML file
-    switch (role.toLowerCase()) {
-        case "admin":
-            fxmlFile = "AdminView.fxml";
-            break;
-        case "recruiter":
-            fxmlFile = "RecruiterView.fxml";
-            break;
-        case "job_seeker":
-            fxmlFile = "JobSeekerView.fxml";
-            break;
-        default:
-            showAlert(Alert.AlertType.ERROR, "Role Error", "Unknown role: " + role);
-            return;
     }
+    private void loadViewForRole(String role) throws IOException {
+        String fxmlFile;
 
-    // Load the FXML and display it
-    FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource(fxmlFile));
-    Scene scene = new Scene(fxmlLoader.load());
+        // Select the appropriate FXML file
+        switch (role.toLowerCase()) {
+            case "admin":
+                fxmlFile = "AdminView.fxml";
+                break;
+            case "recruiter":
+                fxmlFile = "EmployerDashboardView.fxml";
+                break;
+            case "job_seeker":
+                fxmlFile = "JobSeekerDashboardView.fxml";
+                break;
+            default:
+                showAlert(Alert.AlertType.ERROR, "Role Error", "Unknown role: " + role);
+                return;
+        }
 
-    // Use the existing stage to display the new scene
-    Stage stage = (Stage) usernameField.getScene().getWindow();
-    stage.setScene(scene);
-    stage.setTitle(role + " Dashboard");
-    stage.show();
-}
+        // Load the FXML and display it
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource(fxmlFile));
+        Scene scene = new Scene(fxmlLoader.load());
+
+        // Use the existing stage to display the new scene
+        Stage stage = (Stage) usernameField.getScene().getWindow();
+        stage.setScene(scene);
+        stage.sizeToScene();
+        stage.setMinWidth(1000);
+        stage.setMinHeight(800);
+        stage.setTitle(role + " Dashboard");
+        stage.show();
+    }
 
     @FXML
     private void handleRegister() {
@@ -109,6 +121,9 @@ private void loadViewForRole(String role) throws IOException {
             // Use the existing stage to display the registration view
             Stage stage = (Stage) usernameField.getScene().getWindow();
             stage.setScene(registerScene);
+            stage.sizeToScene();
+            stage.setMinWidth(1000);
+            stage.setMinHeight(800);
             stage.setTitle("Register");
             stage.show();
         }

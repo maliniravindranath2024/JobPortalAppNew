@@ -11,13 +11,13 @@ import java.sql.SQLException;
 
 public class EmployerController {
 
-    private int userId; // Store the passed user ID
+    private int user_id; // Store the passed user ID
 
     // Called to initialize user details
-    public void initializeData(int userId) {
-        this.userId = userId;
+    public void initializeData(int user_id) {
+        this.user_id = user_id;
         // Use userId to initialize the profile page (e.g., pre-fill fields if needed)
-        System.out.println("Initialized for Employer user ID: " + userId);
+        System.out.println("Initialized for Employer user ID: " + user_id);
     }
 
     // FXML Fields
@@ -47,11 +47,11 @@ public class EmployerController {
         // Save data to the database
         String query = "INSERT INTO employers (employer_id, company_name, company_website, contact_person, phone, company_description) VALUES (?, ?, ?, ?, ?, ?)";
 
-        try (Connection connection = DBUtil.getConnection();
+        try (Connection connection = DBConnectionTest.getConnection();
              PreparedStatement preparedStatement = connection.prepareStatement(query)) {
 
             // Set parameters in the query
-            preparedStatement.setInt(1, userId);
+            preparedStatement.setInt(1, user_id);
             preparedStatement.setString(2, companyName);
             preparedStatement.setString(3, companyWebsite);
             preparedStatement.setString(4, contactPerson);
