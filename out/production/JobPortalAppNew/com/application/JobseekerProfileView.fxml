@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.geometry.Insets?>
+
+
+<GridPane xmlns:fx="http://javafx.com/fxml" fx:controller="com.application.JobSeekerController"
+          alignment="center" hgap="10" vgap="10">
+    <padding>
+        <Insets top="20" right="20" bottom="20" left="20" />
+    </padding>
+
+    <!-- Title -->
+    <Label text="Jobseeker Profile" style="-fx-font-size: 18px; -fx-font-weight: bold;" GridPane.columnIndex="0" GridPane.rowIndex="0" GridPane.columnSpan="2" />
+
+    <!-- Form Fields -->
+
+    <Label text="First Name:" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+    <TextField fx:id="firstNameField" promptText="Enter first name" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+
+    <Label text="Last Name:" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+    <TextField fx:id="lastNameField" promptText="Enter last name" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+
+    <Label text="Phone:" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+    <TextField fx:id="phoneField" promptText="Enter phone number" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+
+    <Label text="Upload Resume:" GridPane.columnIndex="0" GridPane.rowIndex="4" />
+    <HBox GridPane.columnIndex="1" GridPane.rowIndex="4">
+        <children>
+            <Label fx:id="resumeLabel" text="No file selected" />
+            <Button text="Browse" onAction="#handleUploadResume" />
+        </children>
+    </HBox>
+
+
+    <Label text="Skills:" GridPane.columnIndex="0" GridPane.rowIndex="5" />
+    <TextField fx:id="skillsField" promptText="Enter skills (comma-separated)" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+
+    <Label text="Experience (Years):" GridPane.columnIndex="0" GridPane.rowIndex="6" />
+    <TextField fx:id="experienceField" promptText="Enter years of experience" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+
+    <Label text="Education:" GridPane.columnIndex="0" GridPane.rowIndex="7" />
+    <TextField fx:id="educationField" promptText="Enter education details" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+
+    <!-- Buttons -->
+    <Button text="Save" onAction="#handleSave" GridPane.columnIndex="0" GridPane.rowIndex="8" />
+    <Button text="Cancel" onAction="#handleCancel" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+</GridPane>

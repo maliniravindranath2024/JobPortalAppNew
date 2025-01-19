@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox spacing="15" alignment="TOP_CENTER" xmlns:fx="http://javafx.com/fxml" fx:controller="com.application.UpdateCandidateStatusController">
+    <!-- Header Section -->
+    <Label text="Update Candidate Status" style="-fx-font-size: 18px; -fx-font-weight: bold;" />
+
+    <!-- Dropdown for Job Selection -->
+    <HBox spacing="10" alignment="CENTER_LEFT">
+        <Label text="Select Job:" />
+        <ComboBox fx:id="jobDropDown" prefWidth="300" />
+    </HBox>
+
+    <!-- TableView to display Applications -->
+    <TableView fx:id="applicationTable" prefWidth="600">
+        <columns>
+            <!-- Application ID Column -->
+            <TableColumn fx:id="applicationIdCol" text="Application ID" />
+
+            <TableColumn fx:id="jobIdCol" text="Job ID" />
+
+            <!-- Job Seeker Name Column -->
+            <TableColumn fx:id="jobSeekerIdCol" text="Job Seeker Name" />
+
+            <!-- Status Column -->
+            <TableColumn fx:id="statusCol" text="Status" />
+        </columns>
+    </TableView>
+
+    <!-- Buttons for Accept/Reject -->
+    <HBox spacing="15" alignment="CENTER">
+        <Button fx:id="acceptButton" text="Accept" />
+        <Button fx:id="rejectButton" text="Reject" />
+    </HBox>
+</VBox>

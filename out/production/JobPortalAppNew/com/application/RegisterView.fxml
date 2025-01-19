@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.GridPane?>
+
+<?import javafx.scene.layout.VBox?>
+<GridPane xmlns:fx="http://javafx.com/fxml" fx:controller="com.application.RegisterController"
+          hgap="10" vgap="10" alignment="center">
+    <padding>
+        <Insets top="20" right="20" bottom="20" left="20"/>
+    </padding>
+
+    <Label text="Email Address:" GridPane.columnIndex="0" GridPane.rowIndex="10"/>
+    <TextField fx:id="emailField" GridPane.columnIndex="1" GridPane.rowIndex="10"/>
+
+    <Label text="Password:" GridPane.columnIndex="0" GridPane.rowIndex="11"/>
+    <PasswordField fx:id="passwordField" GridPane.columnIndex="1" GridPane.rowIndex="11"/>
+
+    <!-- Role Selection -->
+    <Label text="Role:" GridPane.columnIndex="0" GridPane.rowIndex="12"/>
+    <VBox GridPane.columnIndex="1" GridPane.rowIndex="12">
+        <children>
+            <RadioButton fx:id="jobseekerRadioButton" text="Jobseeker" toggleGroup="$roleToggleGroup"/>
+            <RadioButton fx:id="employerRadioButton" text="Employer" toggleGroup="$roleToggleGroup"/>
+        </children>
+    </VBox>
+
+    <!-- Buttons -->
+    <Button text="Register" onAction="#handleRegister" GridPane.columnIndex="1" GridPane.rowIndex="15"/>
+    <Button text="Cancel" onAction="#handleCancel" GridPane.columnIndex="1" GridPane.rowIndex="16"/>
+</GridPane>

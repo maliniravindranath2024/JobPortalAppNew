@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane xmlns:fx="http://javafx.com/fxml" fx:controller="com.application.EmployerRegisterController">
+    <children>
+        <!-- Title -->
+        <Label text="Register Company" layoutX="150" layoutY="20" style="-fx-font-size: 18px;"/>
+
+        <!-- Company Name -->
+        <Label text="Company Name:" layoutX="50" layoutY="60"/>
+        <TextField fx:id="companyNameField" layoutX="150" layoutY="60" prefWidth="200"/>
+
+        <!-- Company Website -->
+        <Label text="Company Website:" layoutX="50" layoutY="100"/>
+        <TextField fx:id="companyWebsiteField" layoutX="150" layoutY="100" prefWidth="200"/>
+
+        <!-- Contact Person -->
+        <Label text="Contact Person:" layoutX="50" layoutY="140"/>
+        <TextField fx:id="contactPersonField" layoutX="150" layoutY="140" prefWidth="200"/>
+
+        <!-- Phone -->
+        <Label text="Phone:" layoutX="50" layoutY="180"/>
+        <TextField fx:id="phoneField" layoutX="150" layoutY="180" prefWidth="200"/>
+
+        <!-- Company Description -->
+        <Label text="Company Description:" layoutX="50" layoutY="220"/>
+        <TextArea fx:id="companyDescriptionField" layoutX="150" layoutY="220" prefWidth="200" prefHeight="100"/>
+
+        <!-- Buttons -->
+        <Button text="Save" layoutX="150" layoutY="340" prefWidth="100" onAction="#handleSave"/>
+        <Button text="Cancel" layoutX="260" layoutY="340" prefWidth="100" onAction="#handleCancel"/>
+    </children>
+</AnchorPane>

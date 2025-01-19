@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.*?>
+
+<?import javafx.collections.FXCollections?>
+<?import java.lang.String?>
+<GridPane fx:controller="com.application.InterviewController"
+          xmlns:fx="http://javafx.com/fxml"
+          alignment="CENTER"
+          hgap="10"
+          vgap="10"
+          style="-fx-padding: 20;">
+
+    <!-- Title -->
+    <Label text="Schedule Interview" GridPane.columnSpan="2" style="-fx-font-size: 18px; -fx-font-weight: bold;"/>
+
+    <!-- Jobs ComboBox -->
+    <Label text="Select Job:" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+    <ComboBox fx:id="jobComboBox" GridPane.rowIndex="1" GridPane.columnIndex="1"
+              promptText="Select a Job"/>
+
+    <!-- Applicants Table -->
+    <Label text="Applicants:" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+    <TableView fx:id="applicantsTable" GridPane.rowIndex="2" GridPane.columnSpan="2" GridPane.columnIndex="0"
+               style="-fx-pref-height: 200;">
+        <columns>
+            <TableColumn fx:id="applicationIdColumn" text="Application ID" prefWidth="100"/>
+            <TableColumn fx:id="jobSeekerIdColumn" text="Job Seeker ID" prefWidth="100"/>
+            <TableColumn fx:id="statusColumn" text="Status" prefWidth="100"/>
+        </columns>
+    </TableView>
+
+    <!-- Interview Details -->
+    <Label text="Interview Details" GridPane.rowIndex="3" GridPane.columnSpan="2"
+           style="-fx-font-size: 16px; -fx-font-weight: bold;"/>
+
+    <!-- Scheduled Date -->
+    <Label text="Scheduled Date and Time" GridPane.rowIndex="4" GridPane.columnIndex="0"/>
+<!--    <DatePicker fx:id="scheduledDatePicker" GridPane.rowIndex="4" GridPane.columnIndex="1"/>-->
+    <HBox spacing="10" GridPane.rowIndex="4" GridPane.columnIndex="1">
+        <DatePicker fx:id="scheduledDatePicker"/>
+        <ComboBox fx:id="timePicker" promptText="Select Time">
+            <items>
+                <FXCollections fx:factory="observableArrayList">
+                    <String fx:value="10:00 AM"/>
+                    <String fx:value="11:00 AM"/>
+                    <String fx:value="12:00 PM"/>
+                    <String fx:value="02:00 PM"/>
+                    <String fx:value="03:00 PM"/>
+                    <String fx:value="04:00 PM"/>
+                </FXCollections>
+            </items>
+        </ComboBox>
+    </HBox>
+
+    <!-- Interview Type -->
+    <Label text="Type:" GridPane.rowIndex="5" GridPane.columnIndex="0"/>
+    <ComboBox fx:id="interviewTypeCombo" GridPane.rowIndex="5" GridPane.columnIndex="1"
+              promptText="Select Type">
+        <items>
+            <FXCollections fx:factory="observableArrayList">
+                <String fx:value="In-Person"/>
+                <String fx:value="Online"/>
+                <String fx:value="Phone"/>
+            </FXCollections>
+        </items>
+    </ComboBox>
+
+    <!-- Interview Status -->
+    <Label text="Status:" GridPane.rowIndex="6" GridPane.columnIndex="0"/>
+    <ComboBox fx:id="statusCombo" GridPane.rowIndex="6" GridPane.columnIndex="1"
+              promptText="Select Status">
+        <items>
+            <FXCollections fx:factory="observableArrayList">
+                <String fx:value="Scheduled"/>
+                <String fx:value="Completed"/>
+                <String fx:value="Cancelled"/>
+            </FXCollections>
+        </items>
+    </ComboBox>
+
+    <!-- Feedback -->
+    <Label text="Feedback:" GridPane.rowIndex="7" GridPane.columnIndex="0"/>
+    <TextArea fx:id="feedbackField" GridPane.rowIndex="7" GridPane.columnIndex="1" prefRowCount="3"/>
+
+    <!-- Save Button -->
+    <Button text="Save Interview" fx:id="saveButton" onAction="#handleSaveInterview"
+            GridPane.rowIndex="8" GridPane.columnIndex="1" style="-fx-pref-width: 150;"/>
+
+</GridPane>

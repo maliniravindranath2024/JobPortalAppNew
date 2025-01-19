@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.collections.FXCollections?>
+<VBox xmlns:fx="http://javafx.com/fxml" fx:controller="com.application.AddJobController" spacing="15" alignment="CENTER" style="-fx-padding: 20;">
+    <children>
+        <Label text="Add New Job" style="-fx-font-size: 20px; -fx-font-weight: bold;" />
+
+        <!-- Job Type -->
+        <ComboBox fx:id="typeBox" promptText="Employment Type">
+            <items>
+                <FXCollections fx:factory="observableArrayList">
+                    <String fx:value="Full-Time" />
+                    <String fx:value="Part-Time" />
+                    <String fx:value="Remote" />
+                    <String fx:value="Freelance" />
+                </FXCollections>
+            </items>
+        </ComboBox>
+
+        <!-- Job Title Field -->
+        <TextField fx:id="titleField" promptText="Job Title" />
+
+        <!-- Job Description Field -->
+        <TextArea fx:id="descriptionField" promptText="Job Description" prefHeight="100" />
+
+        <!-- Job Location -->
+        <TextField fx:id="locationField" promptText="Job Location" />
+
+        <!-- Salary Range -->
+        <TextField fx:id="salaryRangeField" promptText="Salary Range (e.g., 50,000 - 70,000)" />
+
+        <!-- Skills Required -->
+        <TextArea fx:id="skillsField" promptText="Skills Required (comma-separated)" prefHeight="80" />
+
+        <!-- Posted Date -->
+        <TextField fx:id="postedAtField" promptText="Posted Date (YYYY-MM-DD)" />
+
+        <!-- Expiry Date -->
+        <TextField fx:id="expiryDateField" promptText="Expiry Date (YYYY-MM-DD)" />
+
+        <!-- Buttons -->
+        <HBox spacing="15" alignment="CENTER">
+            <Button text="Submit" onAction="#handleSubmit" />
+            <Button text="Cancel" onAction="#handleCancel" />
+        </HBox>
+    </children>
+</VBox>
