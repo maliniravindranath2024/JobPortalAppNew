@@ -77,7 +77,7 @@ public class ViewCandidatesController {
         ObservableList<Jobseeker> candidates = getCandidatesForJob(selectedJob);
 
         for (Jobseeker candidate : candidates) {
-            System.out.println("Candidate: " + candidate.getFirstname() + " " + candidate.getLastname());
+            System.out.println("Candidate: " + candidate.getFirstName() + " " + candidate.getLastName());
         }
 
 
@@ -128,9 +128,9 @@ public class ViewCandidatesController {
 
                 // Create a new Jobseeker object and set the fields
                 Jobseeker jobseeker = new Jobseeker();
-                jobseeker.setFirstname(firstName);  // Assume Jobseeker has a setFirstName() method
-                jobseeker.setLastname(lastName);    // Assume Jobseeker has a setLastName() method
-                jobseeker.setExperience(experience); // Assume Jobseeker has a setExperienceYears() method
+                jobseeker.setFirstName(firstName);  // Assume Jobseeker has a setFirstName() method
+                jobseeker.setLastName(lastName);    // Assume Jobseeker has a setLastName() method
+                jobseeker.setExperienceYears(experience); // Assume Jobseeker has a setExperienceYears() method
                 jobseeker.setResume(resume);        // Assume Jobseeker has a setResume() method
 
                 // Add the jobseeker object to the candidates list

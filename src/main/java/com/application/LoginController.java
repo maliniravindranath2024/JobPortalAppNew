@@ -21,7 +21,7 @@ import java.sql.SQLException;
 public class LoginController {
 
     @FXML
-    private TextField usernameField;
+    private TextField emailField;
 
     @FXML
     private PasswordField passwordField;
@@ -29,15 +29,15 @@ public class LoginController {
     @FXML
     private void handleLogin() throws SQLException
     {
-        String username = usernameField.getText();
+        String email = emailField.getText();
         String password = passwordField.getText();
 
-        if (username.isEmpty() || password.isEmpty()) {
+        if (email.isEmpty() || password.isEmpty()) {
             showAlert(Alert.AlertType.WARNING, "Input Error", "Please enter both username and password.");
             return;
         }
     // String role = authenticateUser(username, password);
-        ResultSet userDetails = authenticateUser(username, password);
+        ResultSet userDetails = authenticateUser(email, password);
         if (userDetails == null) {
             showAlert(Alert.AlertType.ERROR, "Login Failed", "Invalid username or password.");
         }
@@ -57,13 +57,13 @@ public class LoginController {
         }
     }
 
-    private ResultSet authenticateUser(String username, String password) throws SQLException {
+    private ResultSet authenticateUser(String email, String password) throws SQLException {
         String query = "SELECT user_id, role FROM users WHERE email = ? AND password = ?";
 
         try {
             Connection connection = DBUtil.getConnection();
              PreparedStatement preparedStatement = connection.prepareStatement(query);
-            preparedStatement.setString(1, username);
+            preparedStatement.setString(1, email);
             preparedStatement.setString(2, password);
             ResultSet resultSet = preparedStatement.executeQuery();
             if (resultSet.next()) {
@@ -102,7 +102,7 @@ private void loadViewForRole(String role) throws IOException {
     Scene scene = new Scene(fxmlLoader.load());
 
     // Use the existing stage to display the new scene
-    Stage stage = (Stage) usernameField.getScene().getWindow();
+    Stage stage = (Stage) emailField.getScene().getWindow();
     stage.setScene(scene);
     stage.sizeToScene();
     stage.setMinWidth(1000);
@@ -119,7 +119,7 @@ private void loadViewForRole(String role) throws IOException {
             Scene registerScene = new Scene(fxmlLoader.load());
 
             // Use the existing stage to display the registration view
-            Stage stage = (Stage) usernameField.getScene().getWindow();
+            Stage stage = (Stage) emailField.getScene().getWindow();
             stage.setScene(registerScene);
             stage.sizeToScene();
             stage.setMinWidth(1000);

@@ -4,21 +4,25 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.RadioButton?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.GridPane?>
-
 <GridPane xmlns:fx="http://javafx.com/fxml" fx:controller="com.application.LoginController"
           hgap="10" vgap="10" alignment="center">
     <padding>
         <Insets top="20" right="20" bottom="20" left="20"/>
     </padding>
 
-    <Label text="Username:" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
-    <TextField fx:id="usernameField" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+    <Label text="Email:" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+    <TextField fx:id="emailField" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
 
     <Label text="Password:" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
     <PasswordField fx:id="passwordField" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
 
-    <Button text="Login" onAction="#handleLogin" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
-    <Button text="Register" onAction="#handleRegister" GridPane.columnIndex="1" GridPane.rowIndex="3"/>
+<!--    <Label text="Role:" GridPane.columnIndex="0" GridPane.rowIndex="2"/>-->
+<!--    <RadioButton fx:id="jobseekerRadioButton" text="Jobseeker" GridPane.columnIndex="1" GridPane.rowIndex="2"/>-->
+<!--    <RadioButton fx:id="employerRadioButton" text="Employer" GridPane.columnIndex="1" GridPane.rowIndex="3"/>-->
+
+    <Button text="Login" onAction="#handleLogin" GridPane.columnIndex="1" GridPane.rowIndex="4"/>
+    <Button text="Register" onAction="#handleRegister" GridPane.columnIndex="1" GridPane.rowIndex="5"/>
 </GridPane>

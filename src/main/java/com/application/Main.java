@@ -2,6 +2,7 @@ package com.application;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
@@ -12,9 +13,11 @@ public class Main extends Application {
     @Override
     public void start(Stage primaryStage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("MainView.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 300, 200);
-        primaryStage.setTitle("Login Form");
-        primaryStage.setScene(scene);
+        Parent root = fxmlLoader.load();
+
+        // Set the scene and show the stage
+        primaryStage.setTitle("Job Portal");
+        primaryStage.setScene(new Scene(root));
         primaryStage.show();
     }
 
