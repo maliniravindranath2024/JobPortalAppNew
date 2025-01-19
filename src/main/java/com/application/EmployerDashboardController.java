@@ -83,7 +83,7 @@ import java.io.IOException;
         private void loadView(String fxmlFile) {
             try {
                 // Load the new view
-                Parent view = FXMLLoader.load(getClass().getResource(fxmlFile));
+                Parent view = FXMLLoader.load(getClass().getResource("/com/application/" + fxmlFile));
 
                 // Clear the existing content and set new content
                 contentPane.getChildren().clear();

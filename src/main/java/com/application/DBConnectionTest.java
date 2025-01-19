@@ -5,7 +5,7 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class DBConnectionTest {
-    private static final String URL = "jdbc:mysql://localhost:3306/db_jobportal";
+    private static final String URL = "jdbc:mysql://localhost:3308/db_jobportal";
     private static final String USERNAME = "root";  // Replace with your database username
     private static final String PASSWORD = "root";  // Replace with your database password
 

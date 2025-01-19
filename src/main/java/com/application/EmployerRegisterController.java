@@ -82,9 +82,10 @@ public class EmployerRegisterController {
             // Load EmployerDashboardView.fxml
             FXMLLoader loader = new FXMLLoader(getClass().getResource("EmployerDashboardView.fxml"));
             Parent root = loader.load();
-
+// Debug check for controller and scene
+            System.out.println("EmployerDashboardView.fxml loaded successfully.");
             // Pass data to EmployerViewController if needed
-            EmployerViewController controller = loader.getController();
+            EmployerDashboardController controller = loader.getController();
             // Example: Passing employer data (optional)
             // controller.initializeEmployerDetails(companyName, employerId);
 
@@ -93,6 +94,9 @@ public class EmployerRegisterController {
             stage.setScene(new Scene(root)); // Set EmployerDashboardView.fxml scene
             stage.setTitle("Employer Dashboard"); // Set a new title for the view
             stage.show();
+
+            System.out.println("Redirected to Employer Dashboard.");
+
 
         } catch (IOException e) {
             e.printStackTrace();
@@ -103,8 +107,17 @@ public class EmployerRegisterController {
     // Handle the Cancel button click
     @FXML
     public void handleCancel() {
-        System.exit(0); // Close the form or navigate to another page as needed
+        // Clear all text fields and text areas in the form
+        companyNameField.clear();
+        companyWebsiteField.clear();
+        contactPersonField.clear();
+        phoneField.clear();
+        companyDescriptionField.clear();
+
+        System.out.println("Form fields cleared.");
     }
+
+
 
     // Utility method for alerts
     private void showAlert(Alert.AlertType alertType, String title, String message) {

@@ -45,7 +45,7 @@ public class ViewJobStatusController {
         ObservableList<Application> applications = FXCollections.observableArrayList();
         try {
             // Update the connection string with the correct credentials
-            Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/db_jobportal", "root", "root");
+            Connection connection = DBConnectionTest.getConnection();
             Statement statement = connection.createStatement();
             String query = "SELECT application_id, job_id, status FROM applications WHERE job_seeker_id = " + jobSeekerId;
             ResultSet resultSet = statement.executeQuery(query);

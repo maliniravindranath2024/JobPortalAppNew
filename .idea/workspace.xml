@@ -4,18 +4,29 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="426abd73-c898-4c7c-ad69-ac38f4b467c2" name="Changes" comment="Commit for out files">
+    <list default="true" id="426abd73-c898-4c7c-ad69-ac38f4b467c2" name="Changes" comment="Commit for merge version 1">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JobPortalAppNew/com/application/Application.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JobPortalAppNew/com/application/Application.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JobPortalAppNew/com/application/AddJobController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JobPortalAppNew/com/application/AddJobController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JobPortalAppNew/com/application/DBConnectionTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JobPortalAppNew/com/application/DBConnectionTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JobPortalAppNew/com/application/EmployerDashboardController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JobPortalAppNew/com/application/EmployerDashboardController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/JobPortalAppNew/com/application/EmployerRegisterController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JobPortalAppNew/com/application/EmployerRegisterController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JobPortalAppNew/com/application/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JobPortalAppNew/com/application/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JobPortalAppNew/com/application/MainView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JobPortalAppNew/com/application/MainView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JobPortalAppNew/com/application/ViewCandidatesController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JobPortalAppNew/com/application/ViewCandidatesController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JobPortalAppNew/resources/com/application/MainView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JobPortalAppNew/resources/com/application/MainView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/application/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/application/LoginController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/application/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/application/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JobPortalAppNew/com/application/JobSeekerRegisterController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JobPortalAppNew/com/application/JobSeekerRegisterController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JobPortalAppNew/com/application/JobseekerProfileView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JobPortalAppNew/com/application/JobseekerProfileView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JobPortalAppNew/com/application/ViewJobStatusController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JobPortalAppNew/com/application/ViewJobStatusController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JobPortalAppNew/com/application/ViewJobsController$1$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JobPortalAppNew/com/application/ViewJobsController$1$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JobPortalAppNew/com/application/ViewJobsController$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JobPortalAppNew/com/application/ViewJobsController$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JobPortalAppNew/com/application/ViewJobsController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JobPortalAppNew/com/application/ViewJobsController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JobPortalAppNew/resources/com/application/JobseekerProfileView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JobPortalAppNew/resources/com/application/JobseekerProfileView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/application/AddJobController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/application/AddJobController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/application/DBConnectionTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/application/DBConnectionTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/application/EmployerDashboardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/application/EmployerDashboardController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/application/EmployerRegisterController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/application/EmployerRegisterController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/application/JobSeekerRegisterController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/application/JobSeekerRegisterController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/application/Jobseeker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/application/Jobseeker.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/application/ViewCandidatesController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/application/ViewCandidatesController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resources/com/application/MainView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/com/application/MainView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/application/ViewJobStatusController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/application/ViewJobStatusController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/application/ViewJobsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/application/ViewJobsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resources/com/application/JobseekerProfileView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/com/application/JobseekerProfileView.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,33 +75,33 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
-    &quot;Application.com.application.Main.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;malini's-branch&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/malin/Desktop/SE &amp; Java/Project/JobPortalAppNew/src/resources/com/application&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;onboarding.tips.debug.path&quot;: &quot;C:/Users/malin/Desktop/SE &amp; Java/Project/JobPortalAppNew/src/Main.java&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.Main.executor": "Run",
+    "Application.com.application.Main.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "malini's-branch",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/malin/Desktop/SE & Java/Project/JobPortalAppNew/src/resources/com/application",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "onboarding.tips.debug.path": "C:/Users/malin/Desktop/SE & Java/Project/JobPortalAppNew/src/Main.java",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;mysql&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "mysql"
     ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\malin\Desktop\SE &amp; Java\Project\JobPortalAppNew\src\resources\com\application" />
@@ -264,6 +275,7 @@
     <MESSAGE value="Completed Dashboard structure for Recruiter" />
     <MESSAGE value="Base files for Admin Dashboard" />
     <MESSAGE value="Commit for out files" />
-    <option name="LAST_COMMIT_MESSAGE" value="Commit for out files" />
+    <MESSAGE value="Commit for merge version 1" />
+    <option name="LAST_COMMIT_MESSAGE" value="Commit for merge version 1" />
   </component>
 </project>

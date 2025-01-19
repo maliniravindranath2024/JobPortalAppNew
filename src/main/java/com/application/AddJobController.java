@@ -140,7 +140,7 @@ public void navigateToDashboard() {
     {
         String query = "SELECT * FROM employers WHERE employer_id = ?";
 
-        try (Connection connection = DBUtil.getConnection();
+        try (Connection connection = DBConnectionTest.getConnection();
              PreparedStatement preparedStatement = connection.prepareStatement(query)) {
 
             preparedStatement.setInt(1, employerId);

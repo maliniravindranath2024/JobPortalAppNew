@@ -3,24 +3,24 @@ package com.application;
 public class Jobseeker {
 
     private int jobSeekerId;
-    private String firstName;
-    private String lastName;
+    private String firstname;
+    private String lastname;
     private String phone;
     private String resume;
     private String skills;
-    private int experienceYears;
+    private int experience;
     private String education;
 
     public Jobseeker() {}
 
-    public Jobseeker(int jobSeekerId, String firstName, String lastName, String phone, String resume, String skills, int experienceYears, String education) {
+    public Jobseeker(int jobSeekerId, String firstName, String lastName, String phone, String resume, String skills, int experience, String education) {
         this.jobSeekerId = jobSeekerId;
-        this.firstName = firstName;
-        this.lastName = lastName;
+        this.firstname = firstName;
+        this.lastname = lastName;
         this.phone = phone;
         this.resume = resume;
         this.skills = skills;
-        this.experienceYears = experienceYears;
+        this.experience = experience;
         this.education = education;
     }
 
@@ -32,20 +32,20 @@ public class Jobseeker {
         this.jobSeekerId = jobSeekerId;
     }
 
-    public String getFirstName() {
-        return firstName;
+    public String getFirstname() {
+        return firstname;
     }
 
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
+    public void setFirstname(String firstName) {
+        this.firstname = firstName;
     }
 
-    public String getLastName() {
-        return lastName;
+    public String getLastname() {
+        return lastname;
     }
 
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
+    public void setLastname(String lastName) {
+        this.lastname = lastName;
     }
 
     public String getPhone() {
@@ -72,12 +72,12 @@ public class Jobseeker {
         this.skills = skills;
     }
 
-    public int getExperienceYears() {
-        return experienceYears;
+    public int getExperience() {
+        return experience;
     }
 
-    public void setExperienceYears(int experienceYears) {
-        this.experienceYears = experienceYears;
+    public void setExperience(int experience) {
+        this.experience = experience;
     }
 
     public String getEducation() {

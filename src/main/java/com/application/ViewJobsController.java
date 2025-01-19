@@ -8,11 +8,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.KeyEvent;
 import javafx.util.Callback;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.Statement;
+import java.sql.*;
 
 public class ViewJobsController {
 
@@ -65,11 +61,11 @@ public class ViewJobsController {
     }
 
     private void loadJobsFromDatabase() {
-        String url = "jdbc:mysql://localhost:3306/db_jobportal";
+        String url = "jdbc:mysql://localhost:3308/db_jobportal";
         String user = "root";
         String password = "root";
 
-        try (Connection connection = DriverManager.getConnection(url, user, password);
+        try (Connection connection = DBConnectionTest.getConnection();
              Statement statement = connection.createStatement();
              ResultSet resultSet = statement.executeQuery("SELECT * FROM jobs")) {
 
@@ -128,34 +124,55 @@ public class ViewJobsController {
     private void applyForJob(int jobId) {
         System.out.println("Apply button clicked for job ID: " + jobId); // Debugging print statement
 
-        String url = "jdbc:mysql://localhost:3306/db_jobportal";
-        String user = "root";
-        String password = "root";
+        int jobSeekerId = UserSession.getInstance().getUserId();
+        System.out.println("Job Seeker ID: " + jobSeekerId);// Get job seeker ID
+        if (!validateJobSeekerId(jobSeekerId)) {
+            System.out.println("Invalid job seeker ID: " + jobSeekerId);
+            showAlert("You must have a valid job seeker profile to apply for this job.");
+            return;
+        }
+        else {
+            try (Connection connection = DBConnectionTest.getConnection()) {
+                String sql = "INSERT INTO applications (job_id, job_seeker_id, status) VALUES (?, ?, ?)";
+                PreparedStatement pstmt = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
+                pstmt.setInt(1, jobId);
+                pstmt.setInt(2, jobSeekerId); // Replace with actual job seeker ID
+                pstmt.setString(3, "applied");
+                int affectedRows = pstmt.executeUpdate();
 
-        try (Connection connection = DriverManager.getConnection(url, user, password)) {
-            String sql = "INSERT INTO applications (job_id, job_seeker_id, status) VALUES (?, ?, ?)";
-            PreparedStatement pstmt = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
-            pstmt.setInt(1, jobId);
-            pstmt.setInt(2, getJobSeekerId()); // Replace with actual job seeker ID
-            pstmt.setString(3, "Applied");
-            int affectedRows = pstmt.executeUpdate();
+                System.out.println("ID: " + jobSeekerId); // Debugging print statement
+                System.out.println("Affected rows: " + affectedRows); // Debugging print statement
 
-            System.out.println("ID: " + getJobSeekerId()); // Debugging print statement
-            System.out.println("Affected rows: " + affectedRows); // Debugging print statement
-
-            if (affectedRows > 0) {
-                ResultSet rs = pstmt.getGeneratedKeys();
-                if (rs.next()) {
-                    int applicationId = rs.getInt(1);
-                    showAlert("Application successful! Application ID: " + applicationId);
+                if (affectedRows > 0) {
+                    ResultSet rs = pstmt.getGeneratedKeys();
+                    if (rs.next()) {
+                        int applicationId = rs.getInt(1);
+                        showAlert("Application successful! Application ID: " + applicationId);
+                    }
+                } else {
+                    showAlert("Application failed. Please try again.");
                 }
-            } else {
-                showAlert("Application failed. Please try again.");
+            } catch (SQLException e) {
+                throw new RuntimeException(e);
+            }
+        }
+    }
+
+    private boolean validateJobSeekerId(int jobSeekerId) {
+        String query = "SELECT COUNT(*) FROM jobseekers WHERE job_seeker_id = ?";
+        try (Connection connection = DBConnectionTest.getConnection();
+             PreparedStatement preparedStatement = connection.prepareStatement(query)) {
+
+            preparedStatement.setInt(1, jobSeekerId);
+            ResultSet resultSet = preparedStatement.executeQuery();
+
+            if (resultSet.next() && resultSet.getInt(1) > 0) {
+                return true; // Valid job_seeker_id
             }
         } catch (Exception e) {
             e.printStackTrace();
-            showAlert("An error occurred: " + e.getMessage());
         }
+        return false; // Invalid job_seeker_id
     }
 
     private int getJobSeekerId() {

@@ -118,6 +118,7 @@ public class JobSeekerRegisterController {
             showAlert(Alert.AlertType.ERROR, "Database Error", "Failed to save profile.");
         }
     }
+    @FXML
     private void handleNavigateToJobSeekerView() {
         try {
             // Load JobSeekerDashboardView.fxml
