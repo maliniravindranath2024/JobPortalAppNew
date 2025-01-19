@@ -28,6 +28,13 @@ public class Job {
         this.expiryDate = expiryDate;
     }
 
+    public Job(int jobId, String title, String description) {
+        this.jobId = jobId;
+        this.title = title;
+        this.description = description;
+        //this.postedAt = postedBy;
+    }
+
     public int getJobId() {
         return jobId;
     }

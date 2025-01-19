@@ -1,65 +1,51 @@
 package com.application;
 
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.layout.StackPane;
 import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.fxml.FXMLLoader;
 import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class AdminController {
+public class AdminDashboardController {
 
     @FXML
     private StackPane contentPane;
-//    private void loadContent(String fxmlFile) {
-//        loadView(fxmlFile);
-//    }
-
-    @FXML
-    private Button addNewAdminButton;
-
-    @FXML
-    private Button viewAllUsersButton;
-
-    @FXML
-    private Button viewAllJobsButton;
-
-    @FXML
-    private Button logoutButton;
 
     @FXML
     private void handleAddNewAdmin() {
-        // Load the Add New Admin content into the contentArea
         loadView("AddAdminView.fxml");
     }
 
     @FXML
     private void handleViewAllUsers() {
-        // Load the View All Users content into the contentArea
         loadView("ViewAllUsers.fxml");
     }
 
     @FXML
     private void handleViewAllJobs() {
-        // Load the View All Jobs content into the contentArea
         loadView("ViewAllJobs.fxml");
     }
+
+     /**
+     * Loads a new view into the center contentPane.
+     */
     private void loadView(String fxmlFile) {
         try {
-            // Load the new view
-            Parent view = FXMLLoader.load(getClass().getResource(fxmlFile));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlFile));
+            Parent view = loader.load();
 
-            // Clear the existing content and set new content
+            // Clear the contentPane and add the new view
             contentPane.getChildren().clear();
             contentPane.getChildren().add(view);
         } catch (IOException e) {
             e.printStackTrace();
-            showAlert(Alert.AlertType.ERROR, "Error", "Could not load the requested view: " + fxmlFile);
+            showAlert("Error", "Could not load the view: " + fxmlFile, Alert.AlertType.ERROR);
         }
     }
 
@@ -85,18 +71,14 @@ public class AdminController {
         }
     }
 
+
     /**
-     * Utility method to show alerts.
-     *
-     * @param error
-     * @param title   The title of the alert.
-     * @param message The alert message.
+     * Utility method to display an alert.
      */
-    private void showAlert(Alert.AlertType error, String title, String message) {
-        Alert alert = new Alert(Alert.AlertType.WARNING);
+    private void showAlert(String title, String content, Alert.AlertType alertType) {
+        Alert alert = new Alert(alertType);
         alert.setTitle(title);
-        alert.setHeaderText(null);
-        alert.setContentText(message);
+        alert.setContentText(content);
         alert.showAndWait();
     }
 }

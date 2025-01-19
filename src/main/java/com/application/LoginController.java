@@ -84,7 +84,7 @@ private void loadViewForRole(String role) throws IOException {
     // Select the appropriate FXML file
     switch (role.toLowerCase()) {
         case "admin":
-            fxmlFile = "AdminView.fxml";
+            fxmlFile = "AdminDashboardView.fxml";
             break;
         case "recruiter":
             fxmlFile = "EmployerDashboardView.fxml";
