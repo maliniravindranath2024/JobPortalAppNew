@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.application.ViewJobStatusController">
+    <TableView fx:id="jobStatusTable">
+        <columns>
+            <TableColumn fx:id="applicationIdColumn" text="Application ID"/>
+            <TableColumn fx:id="jobIdColumn" text="Job ID"/>
+            <TableColumn fx:id="statusColumn" text="Status"/>
+        </columns>
+    </TableView>
+</VBox>

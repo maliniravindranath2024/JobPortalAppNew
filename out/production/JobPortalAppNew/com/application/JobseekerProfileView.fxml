@@ -8,7 +8,6 @@
 
 <?import javafx.geometry.Insets?>
 
-
 <GridPane xmlns:fx="http://javafx.com/fxml" fx:controller="com.application.JobSeekerController"
           alignment="center" hgap="10" vgap="10">
     <padding>
@@ -37,7 +36,6 @@
         </children>
     </HBox>
 
-
     <Label text="Skills:" GridPane.columnIndex="0" GridPane.rowIndex="5" />
     <TextField fx:id="skillsField" promptText="Enter skills (comma-separated)" GridPane.columnIndex="1" GridPane.rowIndex="5" />
 
@@ -50,4 +48,5 @@
     <!-- Buttons -->
     <Button text="Save" onAction="#handleSave" GridPane.columnIndex="0" GridPane.rowIndex="8" />
     <Button text="Cancel" onAction="#handleCancel" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+    <Button text="Go to Dashboard" onAction="#handleGoToDashboard" GridPane.columnIndex="1" GridPane.rowIndex="9"/>
 </GridPane>

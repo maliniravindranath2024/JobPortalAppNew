@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml" fx:controller="com.application.ApplyForJobsController">
+    <center>
+        <TableView fx:id="jobTable">
+            <columns>
+                <TableColumn fx:id="jobIdColumn" text="Job ID" />
+                <TableColumn fx:id="titleColumn" text="Title" />
+                <TableColumn fx:id="descriptionColumn" text="Description" />
+                <TableColumn fx:id="locationColumn" text="Location" />
+                <TableColumn fx:id="applyColumn" text="Apply" />
+            </columns>
+        </TableView>
+    </center>
+    <bottom>
+        <VBox spacing="10" style="-fx-padding: 10;">
+            <Label text="Apply for Job" style="-fx-font-size: 16px; -fx-font-weight: bold;" />
+            <TextField fx:id="nameField" promptText="Name" />
+            <TextField fx:id="positionField" promptText="Position Applied For" />
+            <TextField fx:id="locationField" promptText="Location" />
+            <TextField fx:id="skillsField" promptText="Skills" />
+            <TextField fx:id="experienceField" promptText="Experience" />
+            <Label text="Upload Cover Letter" />
+            <Button fx:id="uploadCoverLetterButton" text="Upload Cover Letter" onAction="#handleUploadCoverLetter" />
+            <Label text="Upload CV" />
+            <Button fx:id="uploadCVButton" text="Upload CV" onAction="#handleUploadCV" />
+            <Button fx:id="submitButton" text="Submit" onAction="#handleSubmitApplication" />
+        </VBox>
+    </bottom>
+</BorderPane>

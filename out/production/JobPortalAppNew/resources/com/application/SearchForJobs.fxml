@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml" fx:controller="com.application.SearchForJobsController">
+    <top>
+        <HBox spacing="10" style="-fx-padding: 10;">
+            <TextField fx:id="searchField" promptText="Search for jobs..." />
+            <Button text="Search" onAction="#handleSearch" />
+        </HBox>
+    </top>
+    <center>
+        <TableView fx:id="jobTable">
+            <columns>
+                <TableColumn fx:id="jobIdColumn" text="Job ID" />
+                <TableColumn fx:id="titleColumn" text="Title" />
+                <TableColumn fx:id="descriptionColumn" text="Description" />
+                <TableColumn fx:id="locationColumn" text="Location" />
+                <TableColumn fx:id="salaryRangeColumn" text="Salary Range" />
+                <TableColumn fx:id="typeColumn" text="Type" />
+                <TableColumn fx:id="skillsRequiredColumn" text="Skills Required" />
+                <TableColumn fx:id="postedAtColumn" text="Posted At" />
+                <TableColumn fx:id="expiryDateColumn" text="Expiry Date" />
+            </columns>
+        </TableView>
+    </center>
+</BorderPane>

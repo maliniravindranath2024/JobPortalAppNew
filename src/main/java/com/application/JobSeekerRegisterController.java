@@ -93,7 +93,7 @@ public class JobSeekerRegisterController {
         String query = "INSERT INTO jobseekers (job_seeker_id, first_name, last_name, phone, resume, skills, experience_years, education) " +
                 "VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
 
-        try (Connection connection = DBUtil.getConnection(); // Assuming DBUtil handles database connections
+        try (Connection connection = DBConnectionTest.getConnection(); // Assuming DBUtil handles database connections
              PreparedStatement statement = connection.prepareStatement(query)) {
 
             // Set values into the query
@@ -154,7 +154,7 @@ public class JobSeekerRegisterController {
         }
         try {
             Files.copy(resumeFile.toPath(), destFile.toPath(), StandardCopyOption.REPLACE_EXISTING);
-        return destFile.getAbsolutePath();
+            return destFile.getAbsolutePath();
 
         } catch (IOException e) {
             e.printStackTrace();
